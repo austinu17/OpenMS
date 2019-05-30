@@ -38,4 +38,8 @@ RUN make install -j 4 && rm -rf src doc CMakeFiles
 
 WORKDIR /
 
-RUN pip3 install snakemake matplotlib pandas numpy psutil && rm -rf contrib contrib-build openms-build
+RUN pip3 install snakemake matplotlib pandas numpy psutil
+RUN rm -rf contrib contrib-build openms-build
+
+ENTRYPOINT /run_pipline.sh
+
