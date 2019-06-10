@@ -41,6 +41,8 @@ WORKDIR /
 RUN pip3 install snakemake matplotlib pandas numpy psutil
 RUN rm -rf contrib contrib-build openms-build
 
-ADD ~/Desktop/workflow ~/
-RUN /run_pipline.sh
+WORKDIR /
+COPY Desktop/workflow workflow
+
+RUN run_pipeline.sh
 
